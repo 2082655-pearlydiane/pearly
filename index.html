@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pearly Diane Cupo — Virtual Assistant, Administrative Support, UI/UX Design, and Digital Support Portfolio." />
+  <title>Pearly Diane Cupo | Virtual Assistant Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#09090d;
+      --bg-soft:#111118;
+      --card:#15151e;
+      --card-2:#1b1b26;
+      --text:#f8f7fb;
+      --muted:#a8a5b2;
+      --line:rgba(255,255,255,.09);
+      --pink:#ff5c9a;
+      --pink-2:#ff8fba;
+      --pink-soft:rgba(255,92,154,.13);
+      --white:#fff;
+      --shadow:0 24px 70px rgba(0,0,0,.32);
+      --radius:24px;
+      --max:1160px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:"DM Sans",sans-serif;
+      background:
+        radial-gradient(circle at 80% 10%, rgba(255,92,154,.12), transparent 28%),
+        radial-gradient(circle at 10% 40%, rgba(255,143,186,.06), transparent 25%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.65;
+      overflow-x:hidden;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:min(var(--max),calc(100% - 40px));margin:auto}
+
+    /* NAV */
+    nav{
+      position:fixed;top:0;left:0;right:0;z-index:100;
+      background:rgba(9,9,13,.72);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid rgba(255,255,255,.05);
+    }
+    .nav-inner{
+      height:76px;display:flex;align-items:center;justify-content:space-between;
+    }
+    .logo{font-weight:700;font-size:19px;letter-spacing:-.4px}
+    .logo span{color:var(--pink)}
+    .nav-links{display:flex;gap:30px;align-items:center}
+    .nav-links a{font-size:14px;color:#c7c4ce;transition:.25s}
+    .nav-links a:hover{color:var(--pink)}
+    .nav-cta{
+      padding:10px 17px;border:1px solid rgba(255,92,154,.35);
+      background:var(--pink-soft);border-radius:999px;color:#fff!important;
+    }
+    .menu{display:none;background:none;border:0;color:#fff;font-size:25px}
+
+    /* HERO */
+    .hero{min-height:100vh;display:grid;place-items:center;padding:130px 0 80px}
+    .hero-grid{
+      display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center;
+    }
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:9px;
+      color:var(--pink-2);font-size:13px;font-weight:700;
+      letter-spacing:1.6px;text-transform:uppercase;margin-bottom:20px;
+    }
+    .eyebrow:before{content:"";width:28px;height:1px;background:var(--pink)}
+    h1{
+      font-size:clamp(48px,7vw,82px);line-height:.98;letter-spacing:-4px;
+      max-width:760px;margin-bottom:25px;
+    }
+    h1 em{font-family:"Playfair Display",serif;color:var(--pink);font-style:normal}
+    .hero p{color:var(--muted);font-size:18px;max-width:650px}
+    .buttons{display:flex;gap:13px;flex-wrap:wrap;margin-top:32px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      padding:13px 20px;border-radius:12px;font-weight:700;font-size:14px;
+      border:1px solid var(--line);transition:.25s;
+    }
+    .btn-primary{background:var(--pink);color:#160b11;border-color:var(--pink);box-shadow:0 12px 30px rgba(255,92,154,.2)}
+    .btn-primary:hover{transform:translateY(-2px);background:#ff76aa}
+    .btn-secondary{background:rgba(255,255,255,.03)}
+    .btn-secondary:hover{border-color:rgba(255,92,154,.5);color:var(--pink-2)}
+    .quick-info{display:flex;gap:25px;margin-top:35px;flex-wrap:wrap}
+    .quick-info div{border-left:2px solid var(--pink);padding-left:12px}
+    .quick-info strong{display:block;font-size:16px}
+    .quick-info span{color:var(--muted);font-size:12px}
+
+    .hero-photo-wrap{position:relative;display:flex;justify-content:center}
+    .hero-photo-wrap:before{
+      content:"";position:absolute;width:360px;height:360px;border-radius:50%;
+      background:rgba(255,92,154,.13);filter:blur(15px);z-index:-1;
+    }
+    .hero-photo{
+      width:min(390px,90vw);aspect-ratio:1/1;object-fit:cover;
+      object-position:center top;border-radius:50%;
+      border:8px solid #191923;box-shadow:0 0 0 1px rgba(255,92,154,.25),var(--shadow);
+    }
+    .floating{
+      position:absolute;bottom:5%;left:2%;background:rgba(20,20,29,.92);
+      border:1px solid var(--line);padding:14px 16px;border-radius:16px;
+      box-shadow:var(--shadow);font-size:13px;backdrop-filter:blur(15px)
+    }
+    .floating b{color:var(--pink-2)}
+
+    /* SECTIONS */
+    section{padding:105px 0}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:25px;margin-bottom:42px}
+    .section-kicker{color:var(--pink);font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
+    h2{font-size:clamp(34px,5vw,52px);letter-spacing:-2px;line-height:1.05;margin-top:8px}
+    .section-head p{color:var(--muted);max-width:430px;font-size:14px}
+
+    /* ABOUT */
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .card{
+      background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018));
+      border:1px solid var(--line);border-radius:var(--radius);padding:30px;
+      box-shadow:0 15px 50px rgba(0,0,0,.15)
+    }
+    .about-main{min-height:300px}
+    .card p{color:var(--muted);font-size:15px}
+    .highlight{
+      margin-top:25px;padding:18px;border-radius:16px;background:var(--pink-soft);
+      border:1px solid rgba(255,92,154,.18);color:#f4dbe6;font-size:14px
+    }
+    .mini-cards{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .mini-card{min-height:140px}
+    .mini-card .icon{
+      width:40px;height:40px;border-radius:12px;display:grid;place-items:center;
+      background:var(--pink-soft);color:var(--pink-2);font-weight:700;margin-bottom:18px
+    }
+    .mini-card h3{font-size:17px;margin-bottom:5px}
+    .mini-card p{font-size:13px}
+
+    /* EXPERIENCE */
+    .timeline{display:grid;gap:18px}
+    .job{display:grid;grid-template-columns:180px 1fr;gap:30px;padding:28px 0;border-bottom:1px solid var(--line)}
+    .job:last-child{border-bottom:0}
+    .job-date{color:var(--pink-2);font-size:13px;font-weight:700}
+    .job-title{font-size:22px;margin-bottom:4px}
+    .job-company{color:#d3ced8;font-size:14px;margin-bottom:15px}
+    .job ul{padding-left:18px;color:var(--muted);font-size:14px}
+    .job li{margin:7px 0}
+
+    /* SKILLS */
+    .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .skill-card{padding:27px}
+    .skill-card h3{font-size:17px;margin-bottom:18px}
+    .tags{display:flex;flex-wrap:wrap;gap:8px}
+    .tag{
+      padding:8px 11px;border-radius:999px;background:rgba(255,255,255,.045);
+      border:1px solid var(--line);font-size:12px;color:#d5d1da
+    }
+    .tag:hover{border-color:rgba(255,92,154,.4);color:var(--pink-2)}
+
+    /* WORK */
+    .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .work{
+      min-height:235px;padding:26px;position:relative;overflow:hidden;
+      background:linear-gradient(145deg,#171720,#101017);
+    }
+    .work:after{
+      content:"";position:absolute;width:120px;height:120px;border-radius:50%;
+      right:-40px;top:-40px;background:rgba(255,92,154,.08)
+    }
+    .work-number{color:var(--pink);font-weight:700;font-size:12px}
+    .work h3{font-size:21px;margin:32px 0 10px}
+    .work p{font-size:13px;color:var(--muted)}
+    .work .small{margin-top:18px;color:#d9a8bc;font-size:12px}
+
+    /* ACHIEVEMENTS */
+    .achievement-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+    .achievement{padding:22px;min-height:145px}
+    .achievement strong{display:block;color:var(--pink-2);font-size:28px;margin-bottom:8px}
+    .achievement span{font-size:13px;color:#d5d1da}
+
+    /* CONTACT */
+    .contact{
+      text-align:center;padding:70px 30px;
+      background:linear-gradient(145deg,rgba(255,92,154,.12),rgba(255,255,255,.025));
+      border:1px solid rgba(255,92,154,.18);border-radius:32px;
+    }
+    .contact h2{max-width:700px;margin:8px auto 15px}
+    .contact p{color:var(--muted);max-width:590px;margin:auto}
+    .contact-links{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:27px}
+    footer{padding:35px 0;color:#77737f;font-size:12px;text-align:center}
+
+    /* REVEAL */
+    .reveal{opacity:0;transform:translateY(22px);transition:.7s ease}
+    .reveal.show{opacity:1;transform:none}
+
+    @media(max-width:850px){
+      .nav-links{display:none}
+      .menu{display:block}
+      .hero-grid{grid-template-columns:1fr;gap:50px}
+      .hero-copy{text-align:center}
+      .hero p{margin:auto}
+      .buttons,.quick-info{justify-content:center}
+      .hero-photo-wrap{order:-1}
+      .hero-photo{width:280px}
+      .about-grid,.skills-grid{grid-template-columns:1fr}
+      .work-grid{grid-template-columns:1fr 1fr}
+      .achievement-grid{grid-template-columns:1fr 1fr}
+      .section-head{display:block}
+      .section-head p{margin-top:15px}
+    }
+    @media(max-width:560px){
+      .container{width:min(var(--max),calc(100% - 26px))}
+      section{padding:75px 0}
+      h1{letter-spacing:-2.5px;font-size:49px}
+      .mini-cards,.work-grid,.achievement-grid{grid-template-columns:1fr}
+      .job{grid-template-columns:1fr;gap:7px}
+      .floating{left:0;bottom:0}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <a href="#home" class="logo">Pearly<span>.</span></a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#work">What I Do</a>
+      <a href="#contact" class="nav-cta">Let's Talk</a>
+    </div>
+    <button class="menu" onclick="toggleMenu()" aria-label="Open menu">☰</button>
+  </div>
+</nav>
+
+<main>
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div class="hero-copy reveal">
+        <div class="eyebrow">Virtual Assistant · Digital Support</div>
+        <h1>Organized work.<br><em>Thoughtful</em> support.</h1>
+        <p>
+          Hi, I'm <strong>Pearly Diane Cupo</strong> — a BS Information Technology graduate
+          with experience in administrative support, UI/UX design, software testing,
+          and digital content creation.
+        </p>
+        <div class="buttons">
+          <a href="#contact" class="btn btn-primary">Work With Me ↗</a>
+          <a href="#experience" class="btn btn-secondary">View Experience</a>
+        </div>
+        <div class="quick-info">
+          <div><strong>BS IT</strong><span>Capitol University</span></div>
+          <div><strong>400+ hrs</strong><span>Internship</span></div>
+          <div><strong>Remote</strong><span>Ready to work</span></div>
+        </div>
+      </div>
+
+      <div class="hero-photo-wrap reveal">
+        <img src="profile.jpg" class="hero-photo" alt="Pearly Diane Cupo">
+        <div class="floating">Available for <b>remote opportunities</b></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-head reveal">
+        <div><div class="section-kicker">01 — About</div><h2>A little about me.</h2></div>
+        <p>Reliable support with a mix of organization, creativity, and technical skills.</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="card about-main reveal">
+          <p>
+            I'm a Bachelor of Science in Information Technology graduate from Capitol University.
+            During my internship, I worked on documentation, website testing, interface design
+            improvements, and digital design projects while collaborating with developers and
+            project teams.
+          </p>
+          <div class="highlight">
+            I'm currently seeking opportunities where I can provide reliable administrative
+            support, manage digital tasks efficiently, and help businesses stay organized while
+            continuously growing my skills.
+          </div>
+        </div>
+
+        <div class="mini-cards">
+          <div class="card mini-card reveal">
+            <div class="icon">01</div>
+            <h3>Organized</h3>
+            <p>Documentation, files, spreadsheets, schedules, and digital tasks kept structured.</p>
+          </div>
+          <div class="card mini-card reveal">
+            <div class="icon">02</div>
+            <h3>Detail-focused</h3>
+            <p>Website testing, bug reporting, content organization, and quality checks.</p>
+          </div>
+          <div class="card mini-card reveal">
+            <div class="icon">03</div>
+            <h3>Creative</h3>
+            <p>Canva, Figma, Adobe XD, UI/UX, graphics, layouts, and short-form content.</p>
+          </div>
+          <div class="card mini-card reveal">
+            <div class="icon">04</div>
+            <h3>Fast learner</h3>
+            <p>Comfortable learning new tools and adapting to different workflows and teams.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="container">
+      <div class="section-head reveal">
+        <div><div class="section-kicker">02 — Experience</div><h2>Where I've worked.</h2></div>
+        <p>Remote experience across administrative, property-management, and social-media support.</p>
+      </div>
+
+      <div class="card timeline reveal">
+        <article class="job">
+          <div class="job-date">AUG 2022 — OCT 2025<br>3 YEARS · REMOTE</div>
+          <div>
+            <h3 class="job-title">Real Estate Virtual Assistant / Property Management Assistant</h3>
+            <div class="job-company">Administrative & Property Support</div>
+            <ul>
+              <li>Assisted with daily real estate and property management administrative tasks.</li>
+              <li>Maintained organized property information, records, documents, and spreadsheets.</li>
+              <li>Supported tenant and client communication, inquiries, follow-ups, and scheduling.</li>
+              <li>Updated property listings and organized information related to properties, tenants, and transactions.</li>
+              <li>Conducted online research and supported administrative tasks related to property operations.</li>
+              <li>Used Google Workspace, Microsoft Office, spreadsheets, and productivity tools to keep tasks organized and on time.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="job">
+          <div class="job-date">MAY 2025 — APR 2026<br>1 YEAR · REMOTE</div>
+          <div>
+            <h3 class="job-title">Social Media Manager — La Pink</h3>
+            <div class="job-company">Content & Social Media Support</div>
+            <ul>
+              <li>Managed social media content and supported the brand's online presence.</li>
+              <li>Created and edited social media graphics, posters, and short-form content using Canva and CapCut.</li>
+              <li>Developed content ideas and captions while maintaining consistent visual branding.</li>
+              <li>Organized content schedules and supported audience engagement across social platforms.</li>
+              <li>Monitored content performance and helped maintain an active, professional online presence.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <div class="section-head reveal">
+        <div><div class="section-kicker">03 — Skills</div><h2>Tools in my toolkit.</h2></div>
+        <p>A balanced skill set for administrative, creative, and technical support work.</p>
+      </div>
+
+      <div class="skills-grid">
+        <div class="card skill-card reveal">
+          <h3>Administrative</h3>
+          <div class="tags">
+            <span class="tag">Email Management</span><span class="tag">Calendar Management</span>
+            <span class="tag">File Organization</span><span class="tag">Data Entry</span>
+            <span class="tag">Internet Research</span><span class="tag">Microsoft Office</span>
+            <span class="tag">Google Workspace</span><span class="tag">Documentation</span>
+            <span class="tag">Appointment Scheduling</span>
+          </div>
+        </div>
+
+        <div class="card skill-card reveal">
+          <h3>Creative & UI/UX</h3>
+          <div class="tags">
+            <span class="tag">Canva</span><span class="tag">Figma</span><span class="tag">Adobe XD</span>
+            <span class="tag">UI/UX Design</span><span class="tag">Wireframing</span>
+            <span class="tag">Prototyping</span><span class="tag">Social Media Graphics</span>
+            <span class="tag">Brand Layout Design</span>
+          </div>
+        </div>
+
+        <div class="card skill-card reveal">
+          <h3>Technical</h3>
+          <div class="tags">
+            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Bootstrap</span>
+            <span class="tag">PHP — Basic</span><span class="tag">MySQL — Basic</span>
+            <span class="tag">Software Testing</span><span class="tag">Bug Reporting</span>
+            <span class="tag">Website Content Management</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="container">
+      <div class="section-head reveal">
+        <div><div class="section-kicker">04 — What I Do</div><h2>How I can help.</h2></div>
+        <p>Support that keeps everyday business tasks moving smoothly.</p>
+      </div>
+
+      <div class="work-grid">
+        <div class="card work reveal">
+          <span class="work-number">01 / ADMIN</span>
+          <h3>Administrative Support</h3>
+          <p>File organization, documentation, data entry, email, calendar, scheduling, spreadsheets, and online research.</p>
+          <div class="small">Reliable · Organized · Detail-oriented</div>
+        </div>
+        <div class="card work reveal">
+          <span class="work-number">02 / DIGITAL</span>
+          <h3>Digital Content Support</h3>
+          <p>Social media graphics, captions, content organization, short-form content, and visual brand support.</p>
+          <div class="small">Canva · CapCut · Content Planning</div>
+        </div>
+        <div class="card work reveal">
+          <span class="work-number">03 / UI/UX</span>
+          <h3>UI/UX & Design</h3>
+          <p>Wireframes, prototypes, interface improvements, layouts, and design support using modern design tools.</p>
+          <div class="small">Figma · Adobe XD · Prototyping</div>
+        </div>
+        <div class="card work reveal">
+          <span class="work-number">04 / QA</span>
+          <h3>Website Testing</h3>
+          <p>Testing websites and digital systems, documenting issues, reporting bugs, and checking user-facing experiences.</p>
+          <div class="small">Testing · Bug Reports · Attention to Detail</div>
+        </div>
+        <div class="card work reveal">
+          <span class="work-number">05 / RESEARCH</span>
+          <h3>Online Research</h3>
+          <p>Finding, organizing, and presenting useful online information to support administrative and business tasks.</p>
+          <div class="small">Research · Organization · Documentation</div>
+        </div>
+        <div class="card work reveal">
+          <span class="work-number">06 / LEARNING</span>
+          <h3>New Tools & Workflows</h3>
+          <p>Comfortable learning new software and adapting to team processes, digital tools, and business workflows.</p>
+          <div class="small">Adaptable · Curious · Team-oriented</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head reveal">
+        <div><div class="section-kicker">05 — Highlights</div><h2>A few milestones.</h2></div>
+      </div>
+      <div class="achievement-grid">
+        <div class="card achievement reveal"><strong>400+</strong><span>Hours of internship completed</span></div>
+        <div class="card achievement reveal"><strong>BS IT</strong><span>Capitol University graduate</span></div>
+        <div class="card achievement reveal"><strong>Dean's</strong><span>Lister recognition</span></div>
+        <div class="card achievement reveal"><strong>3+</strong><span>Years remote property support</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="contact reveal">
+        <div class="section-kicker">06 — Contact</div>
+        <h2>Let's make your workload a little lighter.</h2>
+        <p>
+          If you're looking for someone who can help organize tasks, support customers or clients,
+          manage digital work, and learn your workflow quickly, I'd love to connect.
+        </p>
+        <div class="contact-links">
+          <a class="btn btn-primary" href="mailto:cupodiane@gmail.com">Email Me ↗</a>
+          <a class="btn btn-secondary" href="tel:+639531887483">+63 953 188 7483</a>
+          <a class="btn btn-secondary" href="https://pearlydianecupo.my.canva.site/" target="_blank" rel="noopener">Current Portfolio ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © <span id="year"></span> Pearly Diane Cupo · Virtual Assistant & Digital Support
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting) entry.target.classList.add("show");
+    });
+  },{threshold:.12});
+
+  document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+
+  function toggleMenu(){
+    const links=document.querySelector(".nav-links");
+    const open=links.style.display==="flex";
+    links.style.display=open?"none":"flex";
+    links.style.position="absolute";
+    links.style.top="76px";
+    links.style.left="12px";
+    links.style.right="12px";
+    links.style.padding="20px";
+    links.style.flexDirection="column";
+    links.style.background="#111118";
+    links.style.border="1px solid rgba(255,255,255,.08)";
+    links.style.borderRadius="18px";
+  }
+</script>
+</body>
+</html>
